@@ -1,15 +1,16 @@
 {
 	"name": "lucasmichot/unaliaser",
 	"type": "library",
-	"description": "Track and deduplicate email.",
+	"description": "Track and unalias Google Mail and Google Apps emails.",
 	"keywords": [
 		"email",
-		"google",
+		"gmail",
+		"google apps",
+		"account",
 		"security",
 		"auth"
 	],
-	"homepage": "https://github.com/lucasmicht/unaliaser",
-	"license": "MIT",
+	"homepage": "https://github.com/lucasmichot/unaliaser",
 	"authors": [
 		{
 			"name": "Lucas Michot",
@@ -27,5 +28,6 @@
 		"psr-0": {
 			"Unaliaser": "src"
 		}
-	}
+	},
+	"license": "MIT"
 }
