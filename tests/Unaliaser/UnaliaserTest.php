@@ -14,7 +14,7 @@ use Unaliaser\Unaliaser;
 class UnaliaserTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * @covers Unaliaser::__construct
+	 * @covers __construct
 	 */
 	public function testConstruct()
 	{
@@ -23,7 +23,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::__construct
+	 * @covers __construct
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testConstructArgumentStringNotEmail()
@@ -32,7 +32,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::__construct
+	 * @covers __construct
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testConstructArgumentNotString()
@@ -41,7 +41,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::cleanEmail
+	 * @covers cleanEmail
 	 */
 	public function testCleanEmail()
 	{
@@ -56,7 +56,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::domainName
+	 * @covers domainName
 	 */
 	public function testDomainName()
 	{
@@ -65,7 +65,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::isGmail
+	 * @covers isGmail
 	 */
 	public function testIsGmail()
 	{
@@ -80,7 +80,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::mxRecords
+	 * @covers mxRecords
 	 */
 	public function testMxRecords()
 	{
@@ -92,7 +92,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::isGoogleApps
+	 * @covers isGoogleApps
 	 */
 	public function testIsGoogleApps()
 	{
@@ -107,7 +107,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::isGoogle
+	 * @covers isGoogle
 	 */
 	public function testIsGoogle()
 	{
@@ -122,7 +122,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::isGoogle
+	 * @covers isGoogle
 	 */
 	public function testUniqueDomainName()
 	{
@@ -140,7 +140,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::userName
+	 * @covers userName
 	 */
 	public function testUserName()
 	{
@@ -159,7 +159,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 
 
 	/**
-	 * @covers Unaliaser::userAlias
+	 * @covers userAlias
 	 */
 	public function testUserAlias()
 	{
@@ -180,7 +180,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::userAlias
+	 * @covers userAlias
 	 */
 	public function testHasUserAlias()
 	{
@@ -201,7 +201,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::userOrigin
+	 * @covers userOrigin
 	 */
 	public function testUserOrigin()
 	{
@@ -222,7 +222,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::userOrigin
+	 * @covers userOrigin
 	 */
 	public function testUserUndottedOrigin()
 	{
@@ -243,7 +243,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Unaliaser::userIsDottedOrigin
+	 * @covers userIsDottedOrigin
 	 */
 	public function testUserIsDottedOrigin()
 	{
