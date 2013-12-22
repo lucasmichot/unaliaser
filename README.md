@@ -30,15 +30,10 @@ require 'vendor/autoload.php';
 Otherwise, you can simply require the file directly:
 
 ```php
-require_once 'path/to/Unaliaser/src/Unaliaser/Unaliaser';
+require_once 'path/to/Unaliaser/src/Unaliaser/Unaliaser.php';
 ```
 
 ## Methods
-
-In the list below, any static method other than S::create refers to a method in
-`Stringy\StaticStringy`. For all others, they're found in `Stringy\Stringy`.
-Furthermore, all methods that return a Stringy object or string do not modify
-the original.
 
 #### __construct
 
