@@ -1,4 +1,4 @@
-# Carbon
+# Unaliaser
 
 A PHP library to track, deduplicate and unalias Google Mail and Google Apps emails.
 
@@ -57,6 +57,11 @@ $unaliaser = new Unaliaser(' FOO@BAR.COM ');
 echo $unaliaser->cleanEmail();
 // 'foo.bar.com'
 ```
+
+## Toto
+
+* Create documentation in README.md
+* Add to Packagist
 
 ## Tests
 
