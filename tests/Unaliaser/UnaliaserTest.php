@@ -13,9 +13,6 @@ use Unaliaser\Unaliaser;
 
 class UnaliaserTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * @covers __construct
-	 */
 	public function testConstruct()
 	{
 		$unaliaser = new Unaliaser('FOO@BAR.COM');
@@ -23,7 +20,6 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers __construct
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testConstructArgumentStringNotEmail()
@@ -32,7 +28,6 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers __construct
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testConstructArgumentNotString()
@@ -40,9 +35,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$unaliaser = new Unaliaser(123);
 	}
 
-	/**
-	 * @covers cleanEmail
-	 */
+
 	public function testCleanEmail()
 	{
 		$unaliaser = new Unaliaser('    FOO@BAR.COM     ');
@@ -55,18 +48,14 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('foo@bar.com', $unaliaser->cleanEmail());
 	}
 
-	/**
-	 * @covers domainName
-	 */
+
 	public function testDomainName()
 	{
 		$unaliaser = new Unaliaser('foo@bar.com');
 		$this->assertEquals('bar.com', $unaliaser->domainName());
 	}
 
-	/**
-	 * @covers isGmail
-	 */
+
 	public function testIsGmail()
 	{
 		$unaliaser = new Unaliaser('foo@bar.com');
@@ -79,9 +68,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue($unaliaser->isGmail());
 	}
 
-	/**
-	 * @covers mxRecords
-	 */
+
 	public function testMxRecords()
 	{
 		$unaliaser = new Unaliaser('foo@gmail.com');
@@ -91,9 +78,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertNotEmpty($unaliaser->mxRecords());
 	}
 
-	/**
-	 * @covers isGoogleApps
-	 */
+
 	public function testIsGoogleApps()
 	{
 		$unaliaser = new Unaliaser('foo@bar.com');
@@ -106,9 +91,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue($unaliaser->isGoogleApps());
 	}
 
-	/**
-	 * @covers isGoogle
-	 */
+
 	public function testIsGoogle()
 	{
 		$unaliaser = new Unaliaser('foo@bar.com');
@@ -121,9 +104,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue($unaliaser->isGoogle());
 	}
 
-	/**
-	 * @covers isGoogle
-	 */
+
 	public function testUniqueDomainName()
 	{
 		$unaliaser = new Unaliaser('foo@bar.com');
@@ -139,9 +120,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('semalead.com', $unaliaser->uniqueDomainName());
 	}
 
-	/**
-	 * @covers userName
-	 */
+
 	public function testUserName()
 	{
 		$unaliaser = new Unaliaser('lucas@semalead.com');
@@ -158,9 +137,6 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 
-	/**
-	 * @covers userAlias
-	 */
 	public function testUserAlias()
 	{
 		$unaliaser = new Unaliaser('lucas@semalead.com');
@@ -179,9 +155,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertNull($unaliaser->userAlias());
 	}
 
-	/**
-	 * @covers userAlias
-	 */
+
 	public function testHasUserAlias()
 	{
 		$unaliaser = new Unaliaser('lucas@semalead.com');
@@ -200,9 +174,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertFalse($unaliaser->hasUserAlias());
 	}
 
-	/**
-	 * @covers userOrigin
-	 */
+
 	public function testUserOrigin()
 	{
 		$unaliaser = new Unaliaser('lucas@semalead.com');
@@ -221,9 +193,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('foo+alias', $unaliaser->userOrigin());
 	}
 
-	/**
-	 * @covers userOrigin
-	 */
+
 	public function testUserUndottedOrigin()
 	{
 		$unaliaser = new Unaliaser('lucas@semalead.com');
@@ -242,9 +212,7 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('foo+alias', $unaliaser->userUndottedOrigin());
 	}
 
-	/**
-	 * @covers userIsDottedOrigin
-	 */
+
 	public function testUserIsDottedOrigin()
 	{
 		$unaliaser = new Unaliaser('lucas@semalead.com');
@@ -295,7 +263,6 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers       Unaliaser::unique
 	 * @dataProvider dataProviderUnique
 	 */
 	public function testUnique($email, $uniqueEmail)
@@ -332,7 +299,6 @@ class UnaliaserTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers       Unaliaser::unique
 	 * @dataProvider dataProviderIsUnique
 	 */
 	public function testIsUnique($email, $isUniqueEmail)
