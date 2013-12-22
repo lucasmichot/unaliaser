@@ -1,4 +1,4 @@
-unaliaser
+Unaliaser
 =========
 
-Track and unsalias GoogleMail and GoogleApps emails
+Track and unalias GoogleMail and GoogleApps emails
