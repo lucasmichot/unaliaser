@@ -2,6 +2,8 @@
 
 A PHP library to track, deduplicate and unalias Google Mail and Google Apps emails.
 
+[![Latest Stable Version](https://poser.pugx.org/lucasmichot/carbon/v/stable.png)](https://packagist.org/packages/lucasmichot/unaliaser)
+[![Total Downloads](https://poser.pugx.org/lucasmichot/unaliaser/downloads.png)](https://packagist.org/packages/lucasmichot/unaliaser)
 [![Build Status](https://travis-ci.org/lucasmichot/unaliaser.png)](https://travis-ci.org/lucasmichot/unaliaser)
 
 * [Requiring/Loading](#requiringloading)
@@ -58,7 +60,7 @@ echo $unaliaser->cleanEmail();
 // 'foo.bar.com'
 ```
 
-## Toto
+## Todo
 
 * Create documentation in README.md
 * Add to Packagist
