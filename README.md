@@ -8,7 +8,7 @@ A PHP library to track, de-duplicate and un-alias Google Mail and Google Apps em
 
 * [Requiring/Loading](#requiringloading)
 * [Methods](#methods)
- * [__construct](#__construct)
+ * [__construct()](#__construct)
  * [cleanEmail](#cleanEmail)
  * [domainName](#domainName)
  * [isGmail](#isGmail)
