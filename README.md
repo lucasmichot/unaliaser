@@ -50,7 +50,7 @@ require_once 'path/to/Unaliaser/src/Unaliaser/Unaliaser.php';
 
 ## Methods
 
-#### __construct
+#### __construct()
 
 Creates a new instance of `Unaliaser`.
 
