@@ -45,14 +45,62 @@ $unaliaser = new Unaliaser('foo@bar.com');
 
 * If the email, is not valid an `InvalidArgumentExcpetion` will be thrown. *
 
-#### cleanEmail
+#### cleanEmail()
 
 Returns a clean email.
 
 ```php
 $unaliaser = new Unaliaser(' FOO@BAR.COM ');
 echo $unaliaser->cleanEmail();
-// 'foo.bar.com'
+// 'foo@bar.com'
+```
+
+#### domainName()
+
+Returns a the domain name for the email
+
+```php
+$unaliaser = new Unaliaser(' FOO@BAR.COM ');
+echo $unaliaser->domainName();
+// 'bar.com'
+```
+
+#### isGmail()
+
+Check if an email is managed by Google Mail
+
+```php
+$unaliaser = new Unaliaser('johndoe@gmail.com');
+echo $unaliaser->isGmail();
+// true
+```
+
+#### isGoogleApps()
+
+Check if an email is managed by Google Apps
+
+```php
+$unaliaser = new Unaliaser('johndoe@gmail.com');
+echo $unaliaser->isGoogleApps();
+// false
+
+$unaliaser = new Unaliaser('johndoe@yahoo.com');
+echo $unaliaser->isGoogleApps();
+// false
+
+$unaliaser = new Unaliaser('johndoe@semalead.com');
+echo $unaliaser->isGoogleApps();
+// true
+
+```
+
+#### mxRecords()
+
+Get the MX records for the domain name of an email adress
+
+```php
+$unaliaser = new Unaliaser('johndoe@gmail.com');
+print_r($unaliaser->mxRecords());
 ```
 
 ## Todo
