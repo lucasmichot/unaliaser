@@ -110,7 +110,6 @@ echo $unaliaser->isGoogleApps();
 $unaliaser = new Unaliaser('johndoe@semalead.com');
 echo $unaliaser->isGoogleApps();
 // true
-
 ```
 
 #### isGoogle()
@@ -129,7 +128,6 @@ echo $unaliaser->isGoogle();
 $unaliaser = new Unaliaser('johndoe@semalead.com');
 echo $unaliaser->isGoogle();
 // true
-
 ```
 
 #### uniqueDomainName()
