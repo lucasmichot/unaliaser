@@ -58,7 +58,7 @@ Creates a new instance of `Unaliaser`.
 $unaliaser = new Unaliaser('foo@bar.com');
 ```
 
-**If the email, is not valid an `InvalidArgumentExcpetion` will be thrown.**
+**If the email is not valid, an `InvalidArgumentExcpetion` will be thrown.**
 
 #### cleanEmail()
 
