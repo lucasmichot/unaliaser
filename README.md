@@ -50,7 +50,7 @@ $unaliaser = new Unaliaser('foo@bar.com');
 Returns a clean email.
 
 ```php
-$unaliaser = new Unaliaser(' FOO@BAR.COM ');
+$unaliaser = new Unaliaser('  FOO@BAR.COM  ');
 echo $unaliaser->cleanEmail();
 // 'foo@bar.com'
 ```
@@ -94,6 +94,24 @@ echo $unaliaser->isGoogleApps();
 
 ```
 
+#### uniqueDomainName()
+
+Get the unique domain name for a Gmail address
+
+```php
+$unaliaser = new Unaliaser('johndoe@gmail.com');
+echo $unaliaser->uniqueDomainName();
+// 'gmail.com'
+
+$unaliaser = new Unaliaser('johndoe@googlemail.com');
+echo $unaliaser->uniqueDomainName();
+// 'googlemail.com'
+
+$unaliaser = new Unaliaser('johndoe@yahoo.com');
+echo $unaliaser->uniqueDomainName();
+// 'yahoo.com'
+```
+
 #### mxRecords()
 
 Get the MX records for the domain name of an email adress
@@ -101,6 +119,122 @@ Get the MX records for the domain name of an email adress
 ```php
 $unaliaser = new Unaliaser('johndoe@gmail.com');
 print_r($unaliaser->mxRecords());
+```
+
+#### userName()
+
+Get the username for an email address
+
+```php
+$unaliaser = new Unaliaser('johndoe@gmail.com');
+echo $unaliaser->userName();
+// 'johndoe'
+```
+
+#### userAlias()
+
+Get the user alias for a Google address, if any
+
+```php
+$unaliaser = new Unaliaser('johndoe+alias@gmail.com');
+echo $unaliaser->userAlias();
+
+$unaliaser = new Unaliaser('johndoe@gmail.com');
+echo $unaliaser->userAlias();
+// null
+```
+
+#### hasUserAlias()
+
+Determines if a Google email address contains an user alias
+
+```php
+$unaliaser = new Unaliaser('johndoe+alias@yahoo.com');
+echo $unaliaser->hasUserAlias();
+// false
+
+$unaliaser = new Unaliaser('johndoe+alias@gmail.com');
+echo $unaliaser->hasUserAlias();
+// true
+```
+
+#### userOrigin()
+
+Get the original username for a email
+
+```php
+$unaliaser = new Unaliaser('johndoe+alias@yahoo.com');
+echo $unaliaser->userOrigin();
+// 'johndoe+alias'
+
+$unaliaser = new Unaliaser('johndoe+alias@gmail.com');
+echo $unaliaser->userOrigin();
+// 'johndoe'
+```
+
+#### userUndottedOrigin()
+
+Get the original undotted username for a Google address
+
+```php
+$unaliaser = new Unaliaser('john.doe@yahoo.com');
+echo $unaliaser->userUndottedOrigin();
+// 'john.doe'
+
+$unaliaser = new Unaliaser('john.doe@gmail.com');
+echo $unaliaser->userUndottedOrigin();
+// 'johndoe'
+```
+
+
+#### userIsDotted()
+
+Determines if a Google adress is dotted
+
+```php
+$unaliaser = new Unaliaser('john.doe@yahoo.com');
+echo $unaliaser->userIsDotted();
+// false
+
+$unaliaser = new Unaliaser('john.doe@gmail.com');
+echo $unaliaser->userIsDotted();
+// true
+```
+
+#### unique()
+
+Get the unique email address
+
+```php
+$unaliaser = new Unaliaser('john.doe+alias@yahoo.com');
+echo $unaliaser->unique();
+// 'john.doe+alias@yahoo.com'
+
+$unaliaser = new Unaliaser('john.doe+alias@googlemail.com');
+echo $unaliaser->unique();
+// 'johndoe@gmail.com'
+```
+
+#### isUnique()
+
+Determines if the provided email is unique (dotted or aliased)
+
+```php
+$unaliaser = new Unaliaser('john.doe+alias@yahoo.com');
+echo $unaliaser->isUnique();
+// true
+
+$unaliaser = new Unaliaser('john.doe+alias@googlemail.com');
+echo $unaliaser->isUnique();
+// false
+
+$unaliaser = new Unaliaser('johndoe@googlemail.com');
+echo $unaliaser->isUnique();
+// false
+
+$unaliaser = new Unaliaser('johndoe@gmail.com');
+echo $unaliaser->isUnique();
+// true
 ```
 
 ## Todo
