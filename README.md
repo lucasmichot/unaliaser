@@ -8,6 +8,9 @@ A PHP library to track, deduplicate and unalias Google Mail and Google Apps emai
 
 * [Requiring/Loading](#requiringloading)
 * [Methods](#methods)
+ * [__construct](#__construct)
+ * [cleanEmail](#cleanEmail)
+ * [domainName](#domainName)
 * [Tests](#tests)
 * [License](#license)
 
